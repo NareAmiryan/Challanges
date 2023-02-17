@@ -174,3 +174,27 @@ function divisibleSumPairs(n, k, ar) {
 
 //n is arr.length , k is divisor and ar is array ,count all possible pairs which sum is divisible to k
 console.log(divisibleSumPairs(6,3,[1,3,2,6,1,2]))
+
+
+function matchingStrings(strings, queries) {
+    const occurrences = {}
+    const result = Array(queries.length)
+    strings.forEach(str => {
+        if (occurrences[str]) {
+            occurrences[str]++;
+        } else {
+            occurrences[str] = 1;
+        }
+    })
+    queries.forEach((q, index) => {
+        if (occurrences[q]) {
+            result[index] = occurrences[q]
+        } else {
+            result[index] = 0
+        }
+
+    });
+    return result
+}
+
+console.log(matchingStrings(['aba','baba','aba','xzxb'],['aba','xzxb','ab']))

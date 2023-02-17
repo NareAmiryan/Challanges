@@ -157,3 +157,20 @@ large software book
 whiteSheetOfPaper()
 picture frame
 */
+
+
+function divisibleSumPairs(n, k, ar) {
+    // Write your code here
+    let count=0;
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            if((ar[i]+ar[j])%k === 0){
+                count++
+            }
+        }
+    }
+    return count;
+}
+
+//n is arr.length , k is divisor and ar is array ,count all possible pairs which sum is divisible to k
+console.log(divisibleSumPairs(6,3,[1,3,2,6,1,2]))
